@@ -10,26 +10,47 @@ os.makedirs(SNIPPETS_DIR, exist_ok=True)
 if os.path.exists(PIPE_PATH):
     os.remove(PIPE_PATH)
 
+clean_init_lua = """
+vim.opt.statuscolumn = ""
+vim.opt.signcolumn = "no"
+vim.opt.cursorline = false
+vim.opt.colorcolumn = ""
+vim.opt.list = false
+vim.opt.foldcolumn = "0"
+vim.opt.number = true
+vim.opt.relativenumber = false
+vim.schedule(function()
+  pcall(function() Snacks.indent.disable() end)
+  pcall(function() Snacks.scope.disable() end)
+  pcall(function() require('treesitter-context').disable() end)
+end)
+"""
+
 print("Starting foot with nvim --listen...")
 foot_proc = subprocess.Popen([
     "foot",
     "-o", "colors-dark.alpha=1.0",
     "-o", "colors-dark.background=1a1b26",
-    "-e", "nvim", "--listen", PIPE_PATH, "/home/skadi/lab1-cv/index.html"
+    "-e", "nvim", "--listen", PIPE_PATH,
+    "-c", f"lua {clean_init_lua}",
+    "/home/skadi/lab1-cv/index.html"
 ])
 
-print("Waiting 6 seconds for Neovim & LazyVim initialization and notification dismissal...")
+print("Waiting 6 seconds for Neovim initialization and notification dismissal...")
 time.sleep(6.0)
 
 def capture_section(nvim_cmd, output_path, crop_width=1040):
     cmd = ["nvim", "--server", PIPE_PATH, "--remote-send", nvim_cmd]
     subprocess.run(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     time.sleep(0.4)
-    # Capture the neovim window area on River: x=0, y=36, w=1280, h=820
+    # Ensure clean flags on each buffer
+    clean_buf = "lua vim.opt.statuscolumn=''; vim.opt.signcolumn='no'; vim.opt.cursorline=false; vim.opt.list=false; pcall(function() Snacks.indent.disable() end); pcall(function() Snacks.scope.disable() end); pcall(function() require('treesitter-context').disable() end)"
+    subprocess.run(["nvim", "--server", PIPE_PATH, "--remote-send", f":{clean_buf}<CR>"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    time.sleep(0.3)
     subprocess.run(["grim", "-g", "0,36 1280x820", output_path], check=True)
     if crop_width < 1280:
         subprocess.run(["magick", output_path, "-crop", f"{crop_width}x820+0+0", "+repage", output_path], check=True)
-    print(f"Captured: {output_path}")
+    print(f"Captured clean: {output_path}")
 
 try:
     # 1. HTML Head & Navigation
@@ -66,7 +87,7 @@ try:
     # 10. CSS Table & Form styling
     capture_section(":245<CR>zt", f"{SNIPPETS_DIR}/10_css_table_form.png")
 
-    print("All real Neovim captures completed successfully!")
+    print("All clean Neovim captures completed successfully!")
 
 finally:
     foot_proc.terminate()
