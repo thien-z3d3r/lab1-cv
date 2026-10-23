@@ -22,6 +22,13 @@ const {
 const ROOT_DIR = '/home/skadi/lab1-cv';
 const SNIPPETS_DIR = path.join(ROOT_DIR, 'assets/snippets');
 
+function getPngDimensions(filePath) {
+  const buf = fs.readFileSync(filePath);
+  const width = buf.readUInt32BE(16);
+  const height = buf.readUInt32BE(20);
+  return { width, height };
+}
+
 function createHeading1(text) {
   return new Paragraph({
     heading: HeadingLevel.HEADING_1,
@@ -71,8 +78,11 @@ function createParagraph(text, options = {}) {
   });
 }
 
-function createImageBlock(imagePath, caption, widthPx = 540, heightPx = 345) {
+function createImageBlock(imagePath, caption, maxDocWidth = 490) {
   const data = fs.readFileSync(imagePath);
+  const dim = getPngDimensions(imagePath);
+  const widthPx = maxDocWidth;
+  const heightPx = Math.round(maxDocWidth * dim.height / dim.width);
   return [
     new Paragraph({
       alignment: AlignmentType.CENTER,
@@ -427,9 +437,7 @@ async function generateDocx() {
           ),
           ...createImageBlock(
             path.join(ROOT_DIR, 'assets/rendered_page.png'),
-            "Hình 11: Giao diện hoàn chỉnh trang web CV Huynh Khanh Thien trên trình duyệt",
-            500,
-            688
+            "Hình 11: Giao diện hoàn chỉnh trang web CV Huynh Khanh Thien trên trình duyệt"
           ),
 
           // Mục 5: Quy trình triển khai
