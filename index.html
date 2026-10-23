@@ -3,84 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Huynh Khanh Thien | Smart Contract &amp; Systems Developer</title>
-  <!-- Exercise 1: UIT Favicon -->
+  <title>Huynh Khanh Thien - Resume</title>
   <link rel="icon" href="https://www.uit.edu.vn/media/Logo_UIT_In_bde69cac47.jpg">
-  <!-- External CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Top Navigation Bar -->
   <nav class="navbar">
     <div class="nav-container">
-      <a href="#about" class="nav-brand">HKT<span>.dev</span></a>
+      <a href="#about" class="nav-brand">Huynh Khanh Thien</a>
       <ul class="nav-menu">
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#experience" class="nav-link">Experience</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
         <li><a href="#skills" class="nav-link">Skills</a></li>
         <li><a href="#education" class="nav-link">Education</a></li>
-        <li><a href="#contact" class="nav-link nav-btn">Contact</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Header / Hero Section -->
-  <header id="about" class="hero-section">
-    <div class="hero-container">
-      <div class="hero-avatar-wrapper">
-        <img src="assets/avatar.svg" alt="Huynh Khanh Thien Avatar" class="hero-avatar">
-        <span class="status-badge" title="Open to core infrastructure &amp; smart contract research">Active</span>
-      </div>
-      <div class="hero-content">
-        <p class="hero-greeting">Hi, I'm</p>
-        <h1 class="hero-name">Huỳnh Khánh Thiện</h1>
-        <h2 class="hero-title">Smart Contract &amp; Distributed Systems Developer</h2>
-        <p class="hero-bio">
-          Specializing in <strong>EVM smart contract engineering</strong>, low-level optimization (<em>Yul, Assembly, Rust, C++</em>),
-          and high-throughput distributed infrastructure. Experienced in AMM architectures, MEV protection, and high-frequency systems.
+  <header id="about" class="header-section">
+    <div class="header-container">
+      <div class="header-main">
+        <h1 class="header-name">Huynh Khanh Thien</h1>
+        <p class="header-role">Smart Contract &amp; Systems Developer</p>
+        <p class="header-desc">
+          Computer Science undergraduate at University of Information Technology (VNU-HCM) &amp; Birmingham City University (BCU).
+          Focusing on EVM smart contract architecture, low-level systems optimization (Solidity, Yul, Rust, C++), and distributed infrastructure.
         </p>
-        <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary">Get In Touch</a>
-          <a href="#projects" class="btn btn-secondary">View Projects</a>
-          <a href="https://github.com/thien-z3d3r" target="_blank" rel="noopener noreferrer" class="btn btn-outline">GitHub Profile</a>
+        <div class="header-contact">
+          <a href="mailto:thienhuynh.workcontact@gmail.com">thienhuynh.workcontact@gmail.com</a>
+          <span class="sep">/</span>
+          <a href="tel:+840886126411">(+84) 0886 126 411</a>
+          <span class="sep">/</span>
+          <a href="https://github.com/thien-z3d3r" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <span class="sep">/</span>
+          <a href="https://linkedin.com/in/huynh-thien" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
+      </div>
+      <div class="header-avatar">
+        <img src="assets/avatar.svg" alt="Huynh Khanh Thien" width="110" height="110">
       </div>
     </div>
   </header>
 
-  <!-- Main Content Layout (Grid: Main Content + Aside Sidebar) -->
-  <div class="layout-wrapper">
+  <div class="layout-container">
     <main class="main-content">
 
-      <!-- Work Experience Section -->
-      <section id="experience" class="content-section">
-        <div class="section-header">
-          <span class="section-tag">Career Journey</span>
-          <h2 class="section-title">Professional Experience</h2>
-        </div>
+      <section id="experience" class="section-block">
+        <h2 class="section-heading">Experience</h2>
 
-        <article class="timeline-card">
-          <div class="card-header">
+        <article class="item-block">
+          <div class="item-header">
             <div>
-              <h3 class="role-title">Smart Contract Developer</h3>
-              <p class="company-name">Uniswap Labs <span>(Engineering Division)</span></p>
+              <h3 class="item-title">Smart Contract Developer</h3>
+              <p class="item-subtitle">Uniswap Labs <span>(Engineering Division)</span></p>
             </div>
-            <span class="time-badge">2022 – 2025 · Remote</span>
+            <span class="item-time">2022 – 2025 · Remote</span>
           </div>
-          <p class="card-desc">
-            Focused on core AMM smart contract architecture, property-based verification, and protocol-level gas optimization.
-          </p>
-          <ul class="bullet-list">
+          <ul class="item-list">
             <li>
-              Architected and deployed core AMM smart contracts; designed custom <strong>Uniswap v4 singleton hooks</strong>, dynamic volatility-adjusted fee models, and liquidity management primitives using <em>Solidity, Foundry, and Yul</em>.
+              Architected and deployed core AMM smart contracts, designing custom Uniswap v4 singleton hooks, dynamic volatility-adjusted fee models, and liquidity management primitives using Solidity, Foundry, and Yul.
             </li>
             <li>
-              Boosted protocol safety by <mark>48%</mark> and accelerated delivery pace by <mark>52%</mark> through comprehensive property-based fuzzing suites (Foundry/Echidna), formal invariant validation, and automated Slither CI/CD gates.
+              Boosted protocol safety by 48% and accelerated engineering delivery pace by 52% by establishing property-based fuzzing suites (Foundry/Echidna), formal invariant validation, and automated Slither CI/CD gates.
             </li>
             <li>
-              Optimized EVM gas execution efficiency by up to <strong>24%</strong> via bitwise bitmap math, custom 32-byte storage slot packing, transient storage (<code>TSTORE</code> / <code>TLOAD</code>), and hand-optimized inline assembly.
+              Optimized EVM gas execution efficiency by up to 24% via bitwise bitmap math, custom 32-byte storage slot packing, transient storage (<code>TSTORE</code> / <code>TLOAD</code>), and hand-optimized inline assembly (Yul).
             </li>
             <li>
               Engineered high-throughput mempool event streaming listeners and block-polling daemons in C++ and Python (via IPC/WebSockets), analyzing pending transaction sequences and mitigating MEV sandwich attacks.
@@ -88,286 +78,190 @@
           </ul>
         </article>
 
-        <article class="timeline-card">
-          <div class="card-header">
+        <article class="item-block">
+          <div class="item-header">
             <div>
-              <h3 class="role-title">Lead Systems &amp; Algorithmic Developer</h3>
-              <p class="company-name">Proprietary Trading &amp; Distributed Infrastructure <span>(Independent)</span></p>
+              <h3 class="item-title">Lead Systems &amp; Algorithmic Developer</h3>
+              <p class="item-subtitle">Proprietary Trading &amp; Distributed Infrastructure <span>(Independent)</span></p>
             </div>
-            <span class="time-badge">2020 – 2025 · Remote</span>
+            <span class="item-time">2020 – 2025 · Remote</span>
           </div>
-          <p class="card-desc">
-            Built bare-metal high-concurrency clusters, algorithmic trading daemons, and automated anti-bot resilience pipelines.
-          </p>
-          <ul class="bullet-list">
+          <ul class="item-list">
             <li>
-              Architected and maintained a hybrid bare-metal cluster of <strong>100 Intel Xeon compute nodes</strong> bridged with cloud VPS relays, orchestrating 5,000+ concurrent headless bot agents with <strong>99.8%</strong> operational uptime.
+              Architected and maintained an on-premise hybrid bare-metal cluster of 100 Intel Xeon compute nodes bridged with cloud VPS relays, orchestrating 5,000+ concurrent headless bot agents with 99.8% operational uptime.
             </li>
             <li>
-              Engineered high-frequency crypto trading daemons in Python and C++, combining orderbook imbalance models, statistical arbitrage, and quantitative strategies, yielding over <strong>500%</strong> cumulative net profit.
+              Engineered high-frequency crypto trading daemons in Python and C++, combining orderbook imbalance models, statistical arbitrage, and technical analysis strategies, delivering over 500% cumulative net profit.
             </li>
             <li>
               Optimized edge machine learning inference pipelines (PyTorch, ONNX) for real-time perceptual tasks, reducing latency by 48% and scaling automated throughput.
             </li>
             <li>
-              Engineered synthetic behavioral models (stochastic Bézier curves, canvas fingerprint spoofing) and dynamic proxy pools across Redis and PostgreSQL, bypassing anti-Sybil heuristics and reducing operational overhead by 75%.
+              Engineered synthetic behavioral models (stochastic Bézier curves, canvas fingerprint spoofing) and dynamic proxy pools across Redis and PostgreSQL, bypassing anti-Sybil heuristics and cutting operational overhead by 75%.
             </li>
           </ul>
         </article>
       </section>
 
-      <!-- Featured Projects Section -->
-      <section id="projects" class="content-section">
-        <div class="section-header">
-          <span class="section-tag">Portfolio</span>
-          <h2 class="section-title">Featured Projects</h2>
-        </div>
+      <section id="projects" class="section-block">
+        <h2 class="section-heading">Featured Projects</h2>
 
-        <div class="projects-grid">
-          <article class="project-card">
-            <div class="project-tags">
-              <span class="badge">Rust</span>
-              <span class="badge">Python</span>
-              <span class="badge">Streaming</span>
+        <div class="projects-list">
+          <article class="project-item">
+            <div class="project-header">
+              <h3 class="project-title">
+                <a href="https://github.com/thien-z3d3r" target="_blank" rel="noopener noreferrer">Streaming Anomaly Detector</a>
+              </h3>
+              <span class="tech-stack">Rust · Python · Streaming</span>
             </div>
-            <h3 class="project-title">Streaming Anomaly Detector</h3>
-            <p class="project-desc">
-              Constructed a high-throughput streaming anomaly detection engine analyzing real-time metric streams with sub-millisecond latency. Implemented sliding-window statistical evaluators for dynamic baseline alerting.
+            <p class="project-summary">
+              High-throughput streaming anomaly detection engine analyzing real-time metric streams with sub-millisecond latency; implemented sliding-window statistical evaluators for dynamic baseline alerting.
             </p>
-            <div class="project-footer">
-              <a href="https://github.com/thien-z3d3r" target="_blank" rel="noopener noreferrer" class="link-arrow">
-                View on GitHub &rarr;
-              </a>
-            </div>
           </article>
 
-          <article class="project-card">
-            <div class="project-tags">
-              <span class="badge">Solidity</span>
-              <span class="badge">Rust</span>
-              <span class="badge">Foundry</span>
+          <article class="project-item">
+            <div class="project-header">
+              <h3 class="project-title">
+                <a href="https://github.com/thien-z3d3r" target="_blank" rel="noopener noreferrer">Supply Chain Optimization Protocol</a>
+              </h3>
+              <span class="tech-stack">Solidity · Rust · Foundry</span>
             </div>
-            <h3 class="project-title">Supply Chain Optimization Protocol</h3>
-            <p class="project-desc">
-              Designed an algorithmic dispatch platform with EVM-verifiable smart contracts for trustless escrow settlement; optimized routing heuristics and automated transaction lifecycles across external RPC endpoints.
+            <p class="project-summary">
+              Algorithmic dispatch platform with EVM-verifiable smart contracts for trustless escrow settlement; optimized routing heuristics and automated transaction lifecycles across external RPC endpoints.
             </p>
-            <div class="project-footer">
-              <a href="https://github.com/thien-z3d3r" target="_blank" rel="noopener noreferrer" class="link-arrow">
-                View on GitHub &rarr;
-              </a>
-            </div>
           </article>
 
-          <article class="project-card">
-            <div class="project-tags">
-              <span class="badge">C++</span>
-              <span class="badge">Python</span>
-              <span class="badge">Deep Learning</span>
+          <article class="project-item">
+            <div class="project-header">
+              <h3 class="project-title">
+                <a href="https://github.com/thien-z3d3r" target="_blank" rel="noopener noreferrer">Deep Neural Network from Scratch</a>
+              </h3>
+              <span class="tech-stack">C++ · Linear Algebra</span>
             </div>
-            <h3 class="project-title">Deep Neural Network from Scratch</h3>
-            <p class="project-desc">
-              Implemented a fully connected deep neural network engine from first principles in C++ without external ML frameworks. Authored custom tensor operations, automatic backpropagation, and SGD/Adam optimizers.
+            <p class="project-summary">
+              Fully connected deep neural network engine from first principles in C++ without external ML frameworks; authored custom tensor operations, automatic backpropagation, and SGD/Adam optimizers.
             </p>
-            <div class="project-footer">
-              <a href="https://github.com/thien-z3d3r" target="_blank" rel="noopener noreferrer" class="link-arrow">
-                View on GitHub &rarr;
-              </a>
-            </div>
           </article>
 
-          <article class="project-card">
-            <div class="project-tags">
-              <span class="badge">C++</span>
-              <span class="badge">Rust</span>
-              <span class="badge">Genetic Algo</span>
+          <article class="project-item">
+            <div class="project-header">
+              <h3 class="project-title">
+                <a href="https://github.com/thien-z3d3r" target="_blank" rel="noopener noreferrer">Evolutionary Multi-Agent Simulator</a>
+              </h3>
+              <span class="tech-stack">C++ · Rust · Genetic Algorithms</span>
             </div>
-            <h3 class="project-title">Evolutionary Multi-Agent Simulator</h3>
-            <p class="project-desc">
-              Simulated natural selection dynamics and emergent population behaviors using custom genetic algorithms and neural controllers. Benchmarked computational mutation rates and survival selection pressure.
+            <p class="project-summary">
+              Simulated natural selection dynamics and emergent population behaviors using custom genetic algorithms and neural controllers; benchmarked computational mutation rates and survival selection pressure.
             </p>
-            <div class="project-footer">
-              <a href="https://github.com/thien-z3d3r" target="_blank" rel="noopener noreferrer" class="link-arrow">
-                View on GitHub &rarr;
-              </a>
-            </div>
           </article>
         </div>
       </section>
 
-      <!-- Technical Skills Matrix (Table Element required by Lab 1) -->
-      <section id="skills" class="content-section">
-        <div class="section-header">
-          <span class="section-tag">Competencies</span>
-          <h2 class="section-title">Technical Skills &amp; Stack Overview</h2>
-        </div>
-
-        <p class="table-intro">
-          A structured summary of domain proficiencies, core tooling, and production capabilities:
-        </p>
-
-        <div class="table-responsive">
-          <table class="skills-table">
+      <section id="skills" class="section-block">
+        <h2 class="section-heading">Technical Skills</h2>
+        <div class="table-container">
+          <table class="data-table">
             <thead>
               <tr>
                 <th scope="col">Domain</th>
                 <th scope="col">Technologies &amp; Frameworks</th>
-                <th scope="col">Proficiency Level</th>
-                <th scope="col">Primary Focus</th>
+                <th scope="col">Level</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td><strong>Smart Contracts &amp; Web3</strong></td>
                 <td>Solidity, Yul, Foundry, Hardhat, Slither, Echidna, Uniswap v4 Hooks, Viem</td>
-                <td><span class="level-pill advanced">Advanced</span></td>
-                <td>EVM Internals, Gas Optimization, Formal Invariants</td>
+                <td>Advanced</td>
               </tr>
               <tr>
                 <td><strong>Systems &amp; Languages</strong></td>
                 <td>Rust, C++, C, Go, Python, TypeScript, Bash, x86 Assembly, SQL</td>
-                <td><span class="level-pill advanced">Advanced</span></td>
-                <td>Memory Safety, Low-latency IPC, High-concurrency Daemons</td>
+                <td>Advanced</td>
               </tr>
               <tr>
                 <td><strong>AI / ML &amp; Automation</strong></td>
                 <td>PyTorch, ONNX Runtime, TensorRT, Scikit-Learn, Playwright, Puppeteer</td>
-                <td><span class="level-pill proficient">Proficient</span></td>
-                <td>Edge Inference, Perceptual Models, Browser Instrumentation</td>
+                <td>Proficient</td>
               </tr>
               <tr>
                 <td><strong>Infrastructure &amp; DevOps</strong></td>
                 <td>Linux (Arch/Debian), Docker, Kubernetes, Nginx, Redis, PostgreSQL, RabbitMQ</td>
-                <td><span class="level-pill advanced">Advanced</span></td>
-                <td>Cluster Orchestration, Bare-metal Relays, HA Networks</td>
+                <td>Advanced</td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
 
-      <!-- Contact Section with Form -->
-      <section id="contact" class="content-section">
-        <div class="section-header">
-          <span class="section-tag">Get in Touch</span>
-          <h2 class="section-title">Send a Message</h2>
-        </div>
-
-        <div class="contact-card">
-          <form class="contact-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" placeholder="e.g. Alice Smith" required>
-              </div>
-              <div class="form-group">
-                <label for="email">Your Email</label>
-                <input type="email" id="email" name="email" placeholder="e.g. alice@example.com" required>
-              </div>
+      <section id="contact" class="section-block">
+        <h2 class="section-heading">Contact</h2>
+        <form class="contact-form" action="#" method="POST" onsubmit="event.preventDefault(); this.reset(); alert('Thank you for reaching out!');">
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Alice Smith" required>
             </div>
-            <div class="form-group">
-              <label for="subject">Subject</label>
-              <input type="text" id="subject" name="subject" placeholder="Project collaboration / inquiry" required>
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="alice@example.com" required>
             </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="4" placeholder="Write your message here..." required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary submit-btn">Send Message</button>
-          </form>
-        </div>
+          </div>
+          <div class="form-field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="3" placeholder="Write your message here..." required></textarea>
+          </div>
+          <button type="submit" class="submit-button">Send Message</button>
+        </form>
       </section>
 
     </main>
 
-    <!-- Semantic Aside Sidebar -->
     <aside class="sidebar">
 
-      <!-- Education Block -->
-      <section id="education" class="sidebar-widget">
-        <h3 class="widget-title">Education</h3>
-        <div class="widget-content">
-          <h4 class="edu-degree">Bachelor of Science in Computer Science</h4>
-          <p class="edu-school">
-            <strong>University of Information Technology (VNU-HCM)</strong> &amp; 
-            <strong>Birmingham City University (BCU)</strong>
-          </p>
-          <p class="edu-meta">Joint International Program</p>
-          <span class="time-badge">2026 – 2029 (Expected)</span>
-          <p class="edu-location"><small>Ho Chi Minh City, Vietnam</small></p>
+      <section id="education" class="side-block">
+        <h3 class="side-heading">Education</h3>
+        <div class="edu-item">
+          <h4 class="edu-title">Bachelor of Science in Computer Science</h4>
+          <p class="edu-inst">University of Information Technology (VNU-HCM) &amp; Birmingham City University (BCU)</p>
+          <span class="edu-period">2026 – 2029 (Expected)</span>
+          <p class="edu-place">Ho Chi Minh City, Vietnam</p>
         </div>
       </section>
 
-      <!-- Honors & Awards Block -->
-      <section class="sidebar-widget">
-        <h3 class="widget-title">Honors &amp; Awards</h3>
+      <section class="side-block">
+        <h3 class="side-heading">Honors &amp; Awards</h3>
         <ol class="awards-list">
           <li>
             <strong>Third Prize</strong> – FPT AI &amp; Robotics Challenge
-            <div class="award-meta">Robotics Battle Phase · Quy Nhon, Vietnam (2025)</div>
-            <p class="award-desc">Engineered low-latency robot control logic and autonomous real-time pathfinding in adversarial battle arena.</p>
+            <span class="award-sub">Robotics Battle Phase · Quy Nhon, Vietnam (2025)</span>
           </li>
           <li>
             <strong>Consolation Prize</strong> – Nha Trang Youth AI Challenge
-            <div class="award-meta">Regional AI Competition · Nha Trang, Vietnam (2025)</div>
-            <p class="award-desc">Designed structured reasoning workflows for LLMs evaluated on loss dynamics.</p>
+            <span class="award-sub">Regional AI Competition · Nha Trang, Vietnam (2025)</span>
           </li>
         </ol>
       </section>
 
-      <!-- Definition List for Quick Tech Specs (Required dl, dt, dd) -->
-      <section class="sidebar-widget">
-        <h3 class="widget-title">Quick Specifications</h3>
-        <dl class="specs-dl">
-          <dt>Primary Stack</dt>
+      <section class="side-block">
+        <h3 class="side-heading">Specifications</h3>
+        <dl class="meta-dl">
+          <dt>Core Stack</dt>
           <dd>Solidity, Rust, C++, Yul</dd>
-
-          <dt>Testing Methodology</dt>
-          <dd>Invariant Testing, Property Fuzzing (Echidna/Foundry)</dd>
-
-          <dt>Execution Environment</dt>
-          <dd>Arch Linux / Debian, Docker, Kubernetes</dd>
-
-          <dt>Availability</dt>
-          <dd>Contract Research &amp; Core Systems Engineering</dd>
+          <dt>Testing</dt>
+          <dd>Foundry, Echidna (Invariant)</dd>
+          <dt>Environment</dt>
+          <dd>Arch Linux, Docker, Kubernetes</dd>
         </dl>
-      </section>
-
-      <!-- Direct Contact Links -->
-      <section class="sidebar-widget">
-        <h3 class="widget-title">Direct Connect</h3>
-        <ul class="contact-links">
-          <li>
-            <span class="contact-icon">&#9993;</span>
-            <a href="mailto:thienhuynh.workcontact@gmail.com">thienhuynh.workcontact@gmail.com</a>
-          </li>
-          <li>
-            <span class="contact-icon">&#9742;</span>
-            <a href="tel:+840886126411">(+84) 0886 126 411</a>
-          </li>
-          <li>
-            <span class="contact-icon">&#128279;</span>
-            <a href="https://linkedin.com/in/huynh-thien" target="_blank" rel="noopener noreferrer">linkedin.com/in/huynh-thien</a>
-          </li>
-          <li>
-            <span class="contact-icon">&#128187;</span>
-            <a href="https://github.com/thien-z3d3r" target="_blank" rel="noopener noreferrer">github.com/thien-z3d3r</a>
-          </li>
-        </ul>
       </section>
 
     </aside>
   </div>
 
-  <!-- Footer Section -->
-  <footer class="page-footer">
-    <div class="footer-container">
-      <div class="footer-left">
-        <p>&copy; 2026 <strong>Huỳnh Khánh Thiện</strong>. All rights reserved.</p>
-        <p><small>Designed with semantic HTML5 &amp; minimalist dark CSS for Web Design &amp; Development Lab 1.</small></p>
-      </div>
-      <div class="footer-right">
-        <a href="#about" class="back-to-top">Back to top &uarr;</a>
-      </div>
+  <footer class="footer">
+    <div class="footer-inner">
+      <p>&copy; 2026 Huynh Khanh Thien</p>
+      <a href="#about" class="back-link">Back to top &uarr;</a>
     </div>
   </footer>
 
