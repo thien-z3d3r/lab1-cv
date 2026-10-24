@@ -24,35 +24,38 @@ vim.opt.foldcolumn = "0"
 vim.opt.number = true
 vim.opt.relativenumber = false
 vim.schedule(function()
+  pcall(function() require("smear_cursor").enabled = false end)
+  pcall(function() require("treesitter-context").disable() end)
   pcall(function() Snacks.indent.disable() end)
   pcall(function() Snacks.scope.disable() end)
-  pcall(function() require('treesitter-context').disable() end)
+  pcall(function() Snacks.scroll.disable() end)
+  vim.cmd("redraw!")
 end)
 """
 
-print("Launching foot terminal with Neovim...")
+print("Launching foot terminal with matching TokyoNight background...")
 foot_proc = subprocess.Popen([
     "foot",
     "-o", "colors-dark.alpha=1.0",
-    "-o", "colors-dark.background=1a1b26",
+    "-o", "colors-dark.background=222436",
     "-e", "nvim", "--listen", PIPE_PATH,
     "-c", f"lua {clean_init_lua}",
     "/home/skadi/lab1-cv/index.html"
 ])
 
-print("Waiting for Neovim startup...")
+print("Waiting for Neovim startup & notification timeout...")
 time.sleep(6.0)
 
-def snip_section(nvim_cmd, snippet_name, geom="20,68 820x460"):
-    # Send remote command to jump to line
+def snip_section(nvim_cmd, snippet_name, geom="30,68 820x460"):
+    # Jump to line
     cmd = ["nvim", "--server", PIPE_PATH, "--remote-send", nvim_cmd]
     subprocess.run(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     time.sleep(0.4)
     
-    # Ensure options remain clean
-    clean_buf = "lua vim.opt.statuscolumn=''; vim.opt.signcolumn='no'; vim.opt.cursorline=false; vim.opt.list=false; pcall(function() Snacks.indent.disable() end); pcall(function() Snacks.scope.disable() end); pcall(function() require('treesitter-context').disable() end)"
+    # Re-apply clean redraw on current buffer
+    clean_buf = "lua vim.opt.statuscolumn=''; vim.opt.signcolumn='no'; vim.opt.cursorline=false; vim.opt.list=false; pcall(function() require('smear_cursor').enabled = false end); pcall(function() require('treesitter-context').disable() end); pcall(function() Snacks.indent.disable() end); pcall(function() Snacks.scope.disable() end); vim.cmd('redraw!')"
     subprocess.run(["nvim", "--server", PIPE_PATH, "--remote-send", f":{clean_buf}<CR>"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    time.sleep(0.3)
+    time.sleep(0.4)
     
     # Super+Shift+S style snipping with grim -g
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
@@ -61,10 +64,8 @@ def snip_section(nvim_cmd, snippet_name, geom="20,68 820x460"):
     
     subprocess.run(["grim", "-g", geom, screenshot_file], check=True)
     subprocess.run(["cp", "-f", screenshot_file, dest_file], check=True)
-    
-    # Call wl-copy to match ss script
     subprocess.run(f"wl-copy -t image/png < '{screenshot_file}'", shell=True, stderr=subprocess.DEVNULL)
-    print(f"Snipped: {dest_file} (Saved to {screenshot_file})")
+    print(f"Snipped without stripes: {dest_file}")
     time.sleep(0.2)
 
 try:
@@ -102,7 +103,7 @@ try:
     # 10. CSS Table & Form styling
     snip_section(":245<CR>zt", "10_css_table_form.png")
 
-    print("\nAll snippets successfully snipped via Super+Shift+S method!")
+    print("\nAll 10 snippets cleanly re-snipped without stripes!")
 
 finally:
     foot_proc.terminate()
