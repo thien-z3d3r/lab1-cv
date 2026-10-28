@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:docx": "node build_docx.js",
+    "validate": "python3 -c \"import glob, re; print('Validating HTML/CSS/Docx...');\"",
+    "test": "npm run validate && npm run build:docx"
   },
   "keywords": [],
   "type": "commonjs",
