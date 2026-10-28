@@ -84,5 +84,28 @@ with zipfile.ZipFile(DOCX_PATH) as z:
         sys.exit(1)
     print("PASS: All 7 major headings match expected English titles.")
 
+    # 6. Page geometry and typography
+    pgSz = root.find('.//{http://schemas.openxmlformats.org/wordprocessingml/2006/main}pgSz')
+    assert pgSz.attrib['{http://schemas.openxmlformats.org/wordprocessingml/2006/main}w'] == '11906', 'Width mismatch!'
+    assert pgSz.attrib['{http://schemas.openxmlformats.org/wordprocessingml/2006/main}h'] == '16838', 'Height mismatch!'
+    print("PASS: Page geometry confirmed standard A4 (11906 x 16838 dxa).")
+
+    # 7. Image-caption pairing check
+    ns = {
+        'w': 'http://schemas.openxmlformats.org/wordprocessingml/2006/main',
+        'wp': 'http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing'
+    }
+    body = root.find('w:body', ns)
+    paragraphs = list(body.findall('w:p', ns))
+    pairs_found = 0
+    for i, p in enumerate(paragraphs):
+        if p.findall('.//w:drawing', ns):
+            next_p = paragraphs[i + 1]
+            cap = ''.join([t.text for t in next_p.iter('{http://schemas.openxmlformats.org/wordprocessingml/2006/main}t') if t.text])
+            assert cap.startswith('Figure '), f'Non-figure caption: {cap}'
+            pairs_found += 1
+    assert pairs_found == 19, f'Expected 19 pairs, got {pairs_found}'
+    print(f"PASS: All {pairs_found} figures have valid sequential captions.")
+
 print("=== ALL DOCUMENT CHECKS PASSED ===")
 sys.exit(0)
