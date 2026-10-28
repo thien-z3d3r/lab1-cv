@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build:docx": "node build_docx.js",
-    "validate": "python3 -c \"import glob, re; print('Validating HTML/CSS/Docx...');\"",
+    "validate": "python3 validate.py",
     "test": "npm run validate && npm run build:docx"
   },
   "keywords": [],
