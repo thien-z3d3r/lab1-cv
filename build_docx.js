@@ -447,15 +447,103 @@ async function generateDocx() {
             "1. Khởi tạo kho chứa và commit: git add . && git commit -m '...'\n" +
             "2. Đẩy mã nguồn lên GitHub: git remote add origin https://github.com/thien-z3d3r/lab1-cv.git && git push -u origin main\n" +
             "3. Kích hoạt GitHub Pages trong phần Settings -> Pages của repository, chọn nguồn từ nhánh main và thư mục /(root).\n" +
-            "4. Nghiệm thu trang web hoạt động bình thường tại địa chỉ: https://thien-z3d3r.github.io/lab1-cv/"
+            "4. Nghiệm thu trang web hoạt động bình thường tại địa chỉ: https://thien-z3d3r.github.io/lab1-cv/\n" +
+            "5. Toàn bộ các bài tập về nhà cũng được triển khai công khai tại: https://thien-z3d3r.github.io/lab1-cv/homework/"
+          ),
+
+          // Mục 6: Bài tập về nhà (Homework)
+          createHeading1("6. Bài Tập Về Nhà (Homework Exercises)"),
+          createParagraph(
+            "Phần này trình bày kết quả thực hiện đầy đủ 3 bài tập về nhà trong Mục 6 của tài liệu hướng dẫn Lab 1, với mã nguồn HTML5 và CSS3 đạt độ chính xác cao so với ảnh mẫu quy chuẩn:"
+          ),
+
+          createHeading2("6.1 Bài Tập 1: Flip Card Gallery (Phòng trưng bày thẻ lật 3D)"),
+          createParagraph(
+            "Bài tập yêu cầu xây dựng 3 thẻ công nghệ (HTML, CSS, JavaScript) có khả năng xoay lật 180 độ trong không gian 3 chiều khi người dùng rê chuột (hover). Mặt trước hiển thị biểu tượng và tiêu đề, mặt sau hiển thị tóm tắt chức năng công nghệ.\n\n" +
+            "Các kỹ thuật CSS trọng tâm được áp dụng:\n" +
+            "• perspective: 1000px: Khởi tạo chiều sâu không gian 3 chiều cho khung chứa flip-card.\n" +
+            "• transform-style: preserve-3d: Duy trì không gian 3D cho các lớp con trong quá trình xoay.\n" +
+            "• transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1): Đảm bảo chuyển động lật êm mượt.\n" +
+            "• backface-visibility: hidden: Ẩn mặt phía sau khi xoay lưng về phía người xem.\n" +
+            "• transform: rotateY(180deg): Xoay lật quanh trục dọc Y khi hover."
+          ),
+          ...createImageBlock(
+            path.join(ROOT_DIR, 'assets/snippets/11_hw_flip_cards_css.png'),
+            "Hình 12: Đoạn mã CSS xử lý hiệu ứng lật thẻ 3D trong flip-card.css"
+          ),
+          ...createImageBlock(
+            path.join(ROOT_DIR, 'assets/homework/01_flip_cards.png'),
+            "Hình 13: Giao diện Flip Card Gallery ở trạng thái mặc định (Mặt trước)"
+          ),
+          ...createImageBlock(
+            path.join(ROOT_DIR, 'assets/homework/01_flip_cards_flipped.png'),
+            "Hình 14: Giao diện thẻ khi hover – Mặt sau hiển thị thông tin mô tả chi tiết"
+          ),
+
+          createHeading2("6.2 Bài Tập 2: Login / Sign-up Card (Thẻ xác thực hai cột)"),
+          createParagraph(
+            "Bài tập yêu cầu thiết kế một thẻ xác thực hai cột cân đối được căn giữa màn hình (Flexbox centering):\n" +
+            "• Cột trái (Form Panel): Nền trắng tinh tế, bao gồm tiêu đề 'Welcome back', phụ đề 'Sign in to continue', ô nhập Email (you@example.com), Password (••••••••), checkbox 'Remember me', và nút 'Sign In' màu xanh dương với hiệu ứng hover nâng nhẹ.\n" +
+            "• Cột phải (Decorative Panel): Nền gradient chuyển sắc từ xanh dương sang xanh đậm (#2563eb -> #1e40af), hiển thị lời chào 'Hello, Friend!' và thông điệp truyền cảm hứng xây dựng dự án web.\n\n" +
+            "Các thuộc tính CSS chủ đạo:\n" +
+            "• Flexbox centering: display: flex; justify-content: center; align-items: center; min-height: 100vh.\n" +
+            "• Card styling: border-radius: 16px; overflow: hidden; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.08).\n" +
+            "• Form controls: Ô nhập liệu có viền mềm mại, hiệu ứng focus phát sáng xanh, nút bấm chuyển màu và nâng nhẹ translateY(-1px) khi tương tác."
+          ),
+          ...createImageBlock(
+            path.join(ROOT_DIR, 'assets/snippets/12_hw_login_card_css.png'),
+            "Hình 15: Đoạn mã CSS định kiểu thẻ xác thực hai cột trong login-card.css"
+          ),
+          ...createImageBlock(
+            path.join(ROOT_DIR, 'assets/homework/02_login_card.png'),
+            "Hình 16: Giao diện Login / Sign-up Card hoàn chỉnh bám sát ảnh mẫu quy chuẩn"
+          ),
+
+          createHeading2("6.3 Bài Tập 3: Infinite Scrolling Marquee (Dải băng cuộn vô tận)"),
+          createParagraph(
+            "Bài tập yêu cầu xây dựng một dải băng cuộn các nhãn công nghệ (HTML, CSS, JavaScript, Git, GitHub, VS Code) lặp vô tận liên tục, và tự động tạm dừng khi người dùng rê chuột vào banner.\n\n" +
+            "Các kỹ thuật CSS trọng tâm:\n" +
+            "• @keyframes scrollMarquee: Tịnh tiến thanh trượt từ translateX(0) đến translateX(-50%).\n" +
+            "• Seamless looping: Nhân đôi chuỗi phần tử trong HTML để khi nhóm 1 trôi hết thì nhóm 2 lập tức nối tiếp, tạo cảm giác vô tận không ngắt quãng.\n" +
+            "• animation: scrollMarquee 20s linear infinite: Chuyển động đều đặn và mượt mà.\n" +
+            "• animation-play-state: paused: Tạm dừng chuyển động ngay khi hover chuột vào banner."
+          ),
+          ...createImageBlock(
+            path.join(ROOT_DIR, 'assets/snippets/13_hw_marquee_css.png'),
+            "Hình 17: Đoạn mã CSS điều khiển animation cuộn vô tận và tạm dừng khi hover trong marquee.css"
+          ),
+          ...createImageBlock(
+            path.join(ROOT_DIR, 'assets/homework/03_marquee.png'),
+            "Hình 18: Giao diện dải băng cuộn Infinite Scrolling Marquee trên nền tối #1f2937"
+          ),
+
+          createHeading2("6.4 Cổng Trực Tuyến Tổng Hợp (Homework Showcase Portal)"),
+          createParagraph(
+            "Để hỗ trợ việc chấm bài và nghiệm thu trực tiếp thuận tiện nhất, em đã tích hợp toàn bộ các bài tập vào một giao diện Showcase đồng nhất tại thư mục homework/ (homework/index.html). Người chấm có thể dễ dàng trải nghiệm cả 3 bài tập trên cùng một trang hoặc mở riêng biệt từng bài tập qua các liên kết độc lập."
+          ),
+          ...createImageBlock(
+            path.join(ROOT_DIR, 'assets/homework/04_homework_portal.png'),
+            "Hình 19: Giao diện trang tổng hợp Showcase các bài tập về nhà"
+          ),
+
+          // Phần liên kết GitHub công khai bắt buộc ở cuối báo cáo theo yêu cầu Lab 1
+          createHeading1("7. Liên Kết Nộp Bài (Public Repository Links)"),
+          createParagraph(
+            "Theo đúng quy định nộp bài tại Mục 1.b của tài liệu Lab 1, dưới đây là liên kết công khai (Public) đến mã nguồn và sản phẩm đã triển khai của em:\n\n" +
+            "• GitHub Repository (Public): https://github.com/thien-z3d3r/lab1-cv\n" +
+            "• Trực tuyến CV Resume (GitHub Pages): https://thien-z3d3r.github.io/lab1-cv/\n" +
+            "• Trực tuyến Homework Portal: https://thien-z3d3r.github.io/lab1-cv/homework/\n" +
+            "• Standalone Exercise 1 (Flip Cards): https://thien-z3d3r.github.io/lab1-cv/homework/flip-card.html\n" +
+            "• Standalone Exercise 2 (Login Card): https://thien-z3d3r.github.io/lab1-cv/homework/login-card.html\n" +
+            "• Standalone Exercise 3 (Marquee): https://thien-z3d3r.github.io/lab1-cv/homework/marquee.html"
           ),
 
           new Paragraph({
-            spacing: { before: 180, after: 60 },
+            spacing: { before: 200, after: 60 },
             alignment: AlignmentType.CENTER,
             children: [
               new TextRun({
-                text: "--- HẾT BÁO CÁO ---",
+                text: "--- HẾT BÁO CÁO LAB 1 ---",
                 bold: true,
                 size: 20,
                 color: "94A3B8",

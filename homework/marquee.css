@@ -1,0 +1,108 @@
+/* ==========================================================================
+   Lab 1 - Homework 3: Infinite Scrolling Marquee
+   Focus: @keyframes, animation-play-state, infinite looping
+   ========================================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #f3f4f6;
+  color: #1f2937;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.marquee-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.marquee-header {
+  text-align: center;
+  padding: 0 16px;
+}
+
+.marquee-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1f2937;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.marquee-subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 400;
+}
+
+/* Full-width Banner Container */
+.marquee-banner {
+  width: 100%;
+  height: 64px;
+  background-color: #1f2937; /* Dark slate matching (31, 41, 55) */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: default;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Animated Track */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: scrollMarquee 20s linear infinite;
+}
+
+/* Pause on Hover */
+.marquee-banner:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Group of items: repeated twice for seamless looping */
+.marquee-group {
+  display: flex;
+  align-items: center;
+  gap: 96px;
+  padding-right: 96px;
+  flex-shrink: 0;
+}
+
+/* Individual Marquee Text Item */
+.marquee-item {
+  color: #f3f4f6;
+  font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+  user-select: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.marquee-item:hover {
+  color: #60a5fa;
+  transform: scale(1.08);
+}
+
+/* Continuous Translation Keyframe */
+@keyframes scrollMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

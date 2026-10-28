@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infinite Scrolling Marquee - Lab 1 Homework</title>
+  <link rel="icon" href="https://www.uit.edu.vn/media/Logo_UIT_In_bde69cac47.jpg">
+  <link rel="stylesheet" href="marquee.css">
+</head>
+<body>
+
+  <div class="marquee-page">
+    <header class="marquee-header">
+      <h1 class="marquee-title">Infinite Scrolling Marquee</h1>
+      <p class="marquee-subtitle">Hover the banner to pause it</p>
+    </header>
+
+    <!-- Marquee Banner Container -->
+    <div class="marquee-banner" aria-label="Technology Marquee">
+      <div class="marquee-track">
+        <!-- First Sequence -->
+        <div class="marquee-group">
+          <span class="marquee-item">HTML</span>
+          <span class="marquee-item">CSS</span>
+          <span class="marquee-item">JavaScript</span>
+          <span class="marquee-item">Git</span>
+          <span class="marquee-item">GitHub</span>
+          <span class="marquee-item">VS Code</span>
+        </div>
+        <!-- Second Sequence for Seamless Infinite Looping -->
+        <div class="marquee-group" aria-hidden="true">
+          <span class="marquee-item">HTML</span>
+          <span class="marquee-item">CSS</span>
+          <span class="marquee-item">JavaScript</span>
+          <span class="marquee-item">Git</span>
+          <span class="marquee-item">GitHub</span>
+          <span class="marquee-item">VS Code</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

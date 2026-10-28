@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab 1 - Homework Exercises - Huynh Khanh Thien</title>
+  <link rel="icon" href="https://www.uit.edu.vn/media/Logo_UIT_In_bde69cac47.jpg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="flip-card.css">
+  <link rel="stylesheet" href="login-card.css">
+  <link rel="stylesheet" href="marquee.css">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <nav class="hw-navbar">
+    <div class="hw-nav-container">
+      <a href="../index.html" class="hw-brand">← Back to CV / Resume</a>
+      <div class="hw-nav-links">
+        <a href="#ex1" class="hw-link">1. Flip Cards</a>
+        <a href="#ex2" class="hw-link">2. Login Card</a>
+        <a href="#ex3" class="hw-link">3. Marquee</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hw-header">
+    <div class="hw-header-inner">
+      <span class="hw-tag">Lab 1 Deliverables</span>
+      <h1 class="hw-main-title">Homework Exercises Showcase</h1>
+      <p class="hw-subtitle">
+        HTML5 &amp; CSS3 implementations matching the reference requirements of Lab 1.
+      </p>
+    </div>
+  </header>
+
+  <main class="hw-main">
+
+    <!-- Exercise 1: Flip Card Gallery -->
+    <section id="ex1" class="hw-section">
+      <div class="hw-section-header">
+        <div class="hw-section-title-wrap">
+          <span class="hw-badge">Exercise 1</span>
+          <h2>Flip Card Gallery</h2>
+        </div>
+        <a href="flip-card.html" class="hw-view-standalone" target="_blank">Open Standalone ↗</a>
+      </div>
+      <p class="hw-section-note">
+        Focus: <code>perspective</code>, <code>rotateY</code>, <code>backface-visibility</code>, <code>smooth transition</code>.
+      </p>
+
+      <div class="hw-demo-box">
+        <div class="gallery-wrapper">
+          <header class="gallery-header">
+            <h3 class="gallery-title">Flip Card Gallery</h3>
+            <p class="gallery-subtitle">Hover a card to see the back</p>
+          </header>
+
+          <div class="cards-container">
+            <!-- Card 1: HTML -->
+            <div class="flip-card" tabindex="0">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <div class="card-icon">
+                    <svg viewBox="0 0 512 512" width="56" height="56" aria-hidden="true">
+                      <path fill="#E44D26" d="M107.6 441L71.8 40h368.4l-35.8 401-148.4 41z"/>
+                      <path fill="#F16529" d="M256 449.2l120.3-33.3 29.8-333.9H256z"/>
+                      <path fill="#EBEBEB" d="M256 176.3h-60.5l-4.2-46.7H256V83.5H139.7l12.4 138.9H256zm0 148.3l-.3.1-50.8-13.7-3.3-36.4h-46.2l6.4 71.9 94.2 26.2z"/>
+                      <path fill="#FFFFFF" d="M256 176.3v46.1h56.3l-5.3 59.4-51 13.8v47.9l94.1-26.1 1.2-13.8 11.2-127.3zM256 83.5v46.1h112.4l4.2-46.1z"/>
+                    </svg>
+                  </div>
+                  <h4 class="card-title">HTML</h4>
+                </div>
+                <div class="flip-card-back">
+                  <h4 class="back-title">HTML5</h4>
+                  <span class="back-badge">Markup Language</span>
+                  <p class="back-desc">
+                    Defines the core semantic structure, accessibility landmarks, and content hierarchy of modern web pages.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: CSS -->
+            <div class="flip-card" tabindex="0">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <div class="card-icon">
+                    <svg viewBox="0 0 512 512" width="56" height="56" aria-hidden="true">
+                      <path fill="#264DE4" d="M107.6 441L71.8 40h368.4l-35.8 401-148.4 41z"/>
+                      <path fill="#2965F1" d="M256 449.2l120.3-33.3 29.8-333.9H256z"/>
+                      <path fill="#EBEBEB" d="M256 176.3h-60.5l-4.2-46.7H256V83.5H139.7l12.4 138.9H256zm0 148.3l-.3.1-50.8-13.7-3.3-36.4h-46.2l6.4 71.9 94.2 26.2z"/>
+                      <path fill="#FFFFFF" d="M256 176.3v46.1h56.3l-5.3 59.4-51 13.8v47.9l94.1-26.1 1.2-13.8 11.2-127.3zM256 83.5v46.1h112.4l4.2-46.1z"/>
+                    </svg>
+                  </div>
+                  <h4 class="card-title">CSS</h4>
+                </div>
+                <div class="flip-card-back">
+                  <h4 class="back-title">CSS3</h4>
+                  <span class="back-badge">Stylesheet</span>
+                  <p class="back-desc">
+                    Powers responsive layouts, Flexbox, Grid, custom animations, transitions, and polished visual styles.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3: JavaScript -->
+            <div class="flip-card" tabindex="0">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <div class="card-icon">
+                    <svg viewBox="0 0 512 512" width="56" height="56" aria-hidden="true">
+                      <rect width="512" height="512" fill="#F7DF1E" rx="64"/>
+                      <path d="M298.5 396.7c8.5 13.8 19.8 24.3 39.5 24.3 16.5 0 27-8.3 27-19.8 0-13.8-11-18.8-29.5-26.8l-10.2-4.3c-29.5-12.7-49-28.7-49-62.8 0-31 23.8-54.8 61.2-54.8 26.5 0 45.5 9.3 58.7 32.5l-25.5 16.3c-5.7-10.2-13.3-15.5-23.8-15.5-11 0-18.3 7-18.3 16.3 0 11.3 7.2 16.2 24.5 23.5l10.2 4.3c35 15 54.8 30.5 54.8 66.7 0 38-29.8 58-69.8 58-39 0-64.2-18.8-75.2-41.5zm-136.2 2.5c5.7 10 11.8 18.5 24.8 18.5 13.2 0 21.5-6.5 21.5-31.5V254.8h34.8v131.8c0 41.5-24.3 60.5-56.5 60.5-30.8 0-48.8-16-58.8-37.3z"/>
+                    </svg>
+                  </div>
+                  <h4 class="card-title">JavaScript</h4>
+                </div>
+                <div class="flip-card-back">
+                  <h4 class="back-title">JavaScript</h4>
+                  <span class="back-badge">Programming</span>
+                  <p class="back-desc">
+                    Adds interactivity, DOM manipulation, asynchronous network requests, and modern frontend logic.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Exercise 2: Login / Sign-up Card -->
+    <section id="ex2" class="hw-section">
+      <div class="hw-section-header">
+        <div class="hw-section-title-wrap">
+          <span class="hw-badge">Exercise 2</span>
+          <h2>Login / Sign-up Card</h2>
+        </div>
+        <a href="login-card.html" class="hw-view-standalone" target="_blank">Open Standalone ↗</a>
+      </div>
+      <p class="hw-section-note">
+        Focus: Flexbox/Grid centering, form styling, border-radius, box-shadow.
+      </p>
+
+      <div class="hw-demo-box hw-demo-box-login">
+        <div class="auth-card">
+          <!-- Left Column: Login Form -->
+          <section class="auth-form-panel">
+            <header class="form-header">
+              <h3 class="form-title">Welcome back</h3>
+              <p class="form-subtitle">Sign in to continue</p>
+            </header>
+
+            <form class="auth-form" action="#" method="POST" onsubmit="event.preventDefault();">
+              <div class="form-group">
+                <label for="hw-email" class="form-label">Email</label>
+                <input 
+                  type="email" 
+                  id="hw-email" 
+                  class="form-input" 
+                  placeholder="you@example.com" 
+                  required
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="hw-password" class="form-label">Password</label>
+                <input 
+                  type="password" 
+                  id="hw-password" 
+                  class="form-input" 
+                  placeholder="••••••••" 
+                  required
+                >
+              </div>
+
+              <div class="form-options">
+                <label class="checkbox-container">
+                  <input type="checkbox" id="hw-remember">
+                  <span class="checkbox-label">Remember me</span>
+                </label>
+              </div>
+
+              <button type="submit" class="btn-submit">Sign In</button>
+            </form>
+          </section>
+
+          <!-- Right Column: Decorative Colored Panel -->
+          <section class="auth-decor-panel">
+            <div class="decor-content">
+              <h3 class="decor-title">Hello, Friend!</h3>
+              <p class="decor-description">
+                Join our community and start building amazing web projects today.
+              </p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- Exercise 3: Infinite Scrolling Marquee -->
+    <section id="ex3" class="hw-section">
+      <div class="hw-section-header">
+        <div class="hw-section-title-wrap">
+          <span class="hw-badge">Exercise 3</span>
+          <h2>Infinite Scrolling Marquee</h2>
+        </div>
+        <a href="marquee.html" class="hw-view-standalone" target="_blank">Open Standalone ↗</a>
+      </div>
+      <p class="hw-section-note">
+        Focus: <code>@keyframes</code>, <code>animation-play-state</code>, infinite looping.
+      </p>
+
+      <div class="hw-demo-box hw-demo-box-marquee">
+        <div class="marquee-page">
+          <header class="marquee-header">
+            <h3 class="marquee-title">Infinite Scrolling Marquee</h3>
+            <p class="marquee-subtitle">Hover the banner to pause it</p>
+          </header>
+
+          <div class="marquee-banner" aria-label="Technology Marquee">
+            <div class="marquee-track">
+              <div class="marquee-group">
+                <span class="marquee-item">HTML</span>
+                <span class="marquee-item">CSS</span>
+                <span class="marquee-item">JavaScript</span>
+                <span class="marquee-item">Git</span>
+                <span class="marquee-item">GitHub</span>
+                <span class="marquee-item">VS Code</span>
+              </div>
+              <div class="marquee-group" aria-hidden="true">
+                <span class="marquee-item">HTML</span>
+                <span class="marquee-item">CSS</span>
+                <span class="marquee-item">JavaScript</span>
+                <span class="marquee-item">Git</span>
+                <span class="marquee-item">GitHub</span>
+                <span class="marquee-item">VS Code</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="hw-footer">
+    <p>Lab 1 - Web Design &amp; Development • Huynh Khanh Thien • <a href="https://github.com/thien-z3d3r/lab1-cv" target="_blank" rel="noopener noreferrer">GitHub Repository</a></p>
+  </footer>
+
+</body>
+</html>

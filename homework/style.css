@@ -1,0 +1,246 @@
+/* ==========================================================================
+   Lab 1 - Homework Portal Styles
+   ========================================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #2563eb;
+  --primary-hover: #1d4ed8;
+  --bg-color: #0f1013;
+  --surface-color: #17181c;
+  --surface-border: #262830;
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #0b0c0e;
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* Navbar */
+.hw-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(11, 12, 14, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--surface-border);
+}
+
+.hw-nav-container {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hw-brand {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.hw-brand:hover {
+  color: #ffffff;
+}
+
+.hw-nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.hw-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.hw-link:hover {
+  color: var(--primary-color);
+}
+
+/* Header */
+.hw-header {
+  padding: 60px 24px 30px;
+  text-align: center;
+}
+
+.hw-header-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.hw-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--primary-color);
+  background-color: rgba(37, 99, 235, 0.12);
+  border: 1px solid rgba(37, 99, 235, 0.3);
+  padding: 4px 10px;
+  border-radius: 9999px;
+  margin-bottom: 14px;
+}
+
+.hw-main-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+  margin-bottom: 10px;
+}
+
+.hw-subtitle {
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+/* Main Content */
+.hw-main {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 20px 24px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* Exercise Section */
+.hw-section {
+  background-color: var(--surface-color);
+  border: 1px solid var(--surface-border);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.hw-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.hw-section-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hw-section-title-wrap h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.hw-badge {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background-color: #262830;
+  color: #e2e8f0;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.hw-view-standalone {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary-color);
+  text-decoration: none;
+  padding: 6px 12px;
+  background-color: rgba(37, 99, 235, 0.1);
+  border: 1px solid rgba(37, 99, 235, 0.25);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.hw-view-standalone:hover {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.hw-section-note {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.hw-section-note code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 12px;
+  background-color: #0b0c0e;
+  border: 1px solid var(--surface-border);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #38bdf8;
+}
+
+/* Embedded Demo Box */
+.hw-demo-box {
+  background-color: #f3f4f6;
+  border-radius: 12px;
+  padding: 32px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hw-demo-box-login {
+  background-color: #eef2f7;
+  padding: 36px 16px;
+}
+
+.hw-demo-box-marquee {
+  background-color: #f3f4f6;
+  padding: 36px 0;
+}
+
+/* Footer */
+.hw-footer {
+  text-align: center;
+  padding: 40px 24px;
+  font-size: 13px;
+  color: var(--text-muted);
+  border-top: 1px solid var(--surface-border);
+}
+
+.hw-footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.hw-footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .hw-nav-container {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .hw-section {
+    padding: 20px 16px;
+  }
+}
