@@ -61,14 +61,14 @@
               <h3 class="item-title">Smart Contract Developer</h3>
               <p class="item-subtitle">Uniswap Labs <span>(Engineering Division)</span></p>
             </div>
-            <span class="item-time">2022 – 2025 · Remote</span>
+            <span class="item-time"><em>2022 – 2025</em> · Remote</span>
           </div>
           <ul class="item-list">
             <li>
-              Architected and deployed core AMM smart contracts, designing custom Uniswap v4 singleton hooks, dynamic volatility-adjusted fee models, and liquidity management primitives using Solidity, Foundry, and Yul.
+              Architected and deployed core AMM smart contracts, designing custom <mark>Uniswap v4 singleton hooks</mark>, dynamic volatility-adjusted fee models, and liquidity management primitives using Solidity, Foundry, and Yul.
             </li>
             <li>
-              Boosted protocol safety by 48% and accelerated engineering delivery pace by 52% by establishing property-based fuzzing suites (Foundry/Echidna), formal invariant validation, and automated Slither CI/CD gates.
+              Boosted protocol safety by <mark>48%</mark> and accelerated engineering delivery pace by <mark>52%</mark> by establishing property-based fuzzing suites (Foundry/Echidna), formal invariant validation, and automated Slither CI/CD gates.
             </li>
             <li>
               Optimized EVM gas execution efficiency by up to 24% via bitwise bitmap math, custom 32-byte storage slot packing, transient storage (<code>TSTORE</code> / <code>TLOAD</code>), and hand-optimized inline assembly (Yul).
@@ -209,8 +209,17 @@
             </div>
           </div>
           <div class="form-field">
+            <label for="inquiry">Inquiry Topic</label>
+            <select id="inquiry" name="inquiry">
+              <option value="contract">Smart Contract Development &amp; Architecture</option>
+              <option value="systems">Low-Level Systems Optimization &amp; Infrastructure</option>
+              <option value="general">General Academic / Project Collaboration</option>
+            </select>
+          </div>
+          <div class="form-field">
             <label for="message">Message</label>
             <textarea id="message" name="message" rows="3" placeholder="Write your message here..." required></textarea>
+            <small>Messages are delivered directly to thienhuynh.workcontact@gmail.com.</small>
           </div>
           <button type="submit" class="submit-button">Send Message</button>
         </form>

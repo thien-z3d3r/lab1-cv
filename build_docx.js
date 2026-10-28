@@ -166,7 +166,6 @@ async function generateDocx() {
           })
         },
         children: [
-          // Header info
           new Paragraph({
             alignment: AlignmentType.CENTER,
             spacing: { before: 60, after: 40 },
@@ -219,7 +218,6 @@ async function generateDocx() {
             ]
           }),
 
-          // Info Table
           new Table({
             width: { size: 9026, type: WidthType.DXA },
             columnWidths: [2600, 6426],

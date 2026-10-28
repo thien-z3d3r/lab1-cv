@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Lab 1 - Homework Portal Styles
+   Homework Portal Styles
    ========================================================================== */
 
 * {
@@ -25,7 +25,6 @@ body {
   line-height: 1.6;
 }
 
-/* Navbar */
 .hw-navbar {
   position: sticky;
   top: 0;
@@ -73,7 +72,6 @@ body {
   color: var(--primary-color);
 }
 
-/* Header */
 .hw-header {
   padding: 60px 24px 30px;
   text-align: center;
@@ -111,7 +109,6 @@ body {
   color: var(--text-muted);
 }
 
-/* Main Content */
 .hw-main {
   max-width: 1040px;
   margin: 0 auto;
@@ -121,7 +118,6 @@ body {
   gap: 60px;
 }
 
-/* Exercise Section */
 .hw-section {
   background-color: var(--surface-color);
   border: 1px solid var(--surface-border);
@@ -195,7 +191,6 @@ body {
   color: #38bdf8;
 }
 
-/* Embedded Demo Box */
 .hw-demo-box {
   background-color: #f3f4f6;
   border-radius: 12px;
@@ -216,7 +211,6 @@ body {
   padding: 36px 0;
 }
 
-/* Footer */
 .hw-footer {
   text-align: center;
   padding: 40px 24px;

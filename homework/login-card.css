@@ -1,6 +1,5 @@
 /* ==========================================================================
-   Lab 1 - Homework 2: Login / Sign-up Card
-   Focus: Flexbox/Grid centering, form styling, border-radius, box-shadow
+   2. Login / Sign-up Card
    ========================================================================== */
 
 * {
@@ -27,7 +26,6 @@ body {
   width: 100%;
 }
 
-/* Two-column Card */
 .auth-card {
   display: flex;
   width: 100%;
@@ -39,7 +37,6 @@ body {
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
 }
 
-/* Left Column: Form Panel */
 .auth-form-panel {
   flex: 1;
   padding: 44px 38px;
@@ -156,7 +153,6 @@ body {
   transform: translateY(0);
 }
 
-/* Right Column: Decorative Colored Panel */
 .auth-decor-panel {
   flex: 1;
   background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
@@ -188,7 +184,6 @@ body {
   font-weight: 400;
 }
 
-/* Responsive adjustment for tablet/mobile */
 @media (max-width: 640px) {
   .auth-card {
     flex-direction: column;

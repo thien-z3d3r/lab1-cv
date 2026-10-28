@@ -362,6 +362,7 @@ code {
 }
 
 .form-field input,
+.form-field select,
 .form-field textarea {
   width: 100%;
   background-color: var(--surface);
@@ -375,9 +376,31 @@ code {
   transition: border-color var(--transition);
 }
 
+.form-field select {
+  cursor: pointer;
+}
+
+.form-field select option {
+  background-color: var(--surface);
+  color: var(--text);
+}
+
 .form-field input:focus,
+.form-field select:focus,
 .form-field textarea:focus {
   border-color: var(--border-focus);
+}
+
+.form-field small {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+mark {
+  background-color: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  padding: 1px 5px;
+  border-radius: 3px;
 }
 
 .submit-button {
